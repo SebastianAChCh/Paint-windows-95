@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Paint en JavaScript</title>
+</head>
+
+<body>
+
+    <header>
+        <button class="action-header">
+            <p><span>F</span>ile</p>
+        </button>
+        <button class="action-header">
+            <p><span>E</span>dit</p>
+        </button>
+        <button class="action-header">
+            <p><span>V</span>iew</p>
+        </button>
+        <button class="action-header">
+            <p><span>I</span>mage</p>
+        </button>
+        <button class="action-header">
+            <p><span>O</span>ptions</p>
+        </button>
+        <button class="action-header">
+            <p><span>H</span>elp</p>
+        </button>
+
+        <div class="border-bottom-custom"></div>
+    </header>
+
+    <aside class="actions">
+        <nav>
+            <button id="ellipse" class="icon"><img src="./icons/ellipse.png" alt=""></button>
+            <button id="rectangle" class="icon"><img src="./icons/rectangle.png" alt=""></button>
+            <button id="erase" class="icon"><img src="./icons/erase.png" alt=""></button>
+            <button id="picker" class="icon"><img src="./icons/picker.png" alt=""></button>
+            <button id="draw" class="icon"><img src="./icons/draw.png" alt=""></button>
+            <button id="trash" class="icon"><img class="trash-icon-img" src="./icons/trash.png" alt=""></button>
+        </nav>
+
+        <div class="rectangle-decoration"></div>
+    </aside>
+
+    <main>
+        <div class="border-top-custom"></div>
+        <canvas id="canva" width="400" height="300"></canvas>
+        <div class="border-right-custom"></div>
+    </main>
+
+    <footer class="colors-selector">
+        <input type="color" name="color-selector" id="color-selector" value="#000002">
+    </footer>
+
+    <dialog id="notSupported" class="notSupported">
+        <p>Your browser does not support EyeDropper</p>
+    </dialog>
+
+    <script type="module" src="./main.js" defer></script>
+</body>
+
+</html>

@@ -22,7 +22,6 @@ export default class Drawing {
 
         this.ctx.lineWidth = operationMode != 'draw' ? 15 : 1;
         this.ctx.globalCompositeOperation = operationMode != 'draw' ? "destination-out" : 'source-over';
-        // this.ctx.
         this.ctx.beginPath();
         this.ctx.moveTo(this.lastX, this.lastY);
         this.ctx.lineTo(x, y);

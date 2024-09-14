@@ -36,6 +36,20 @@ actionButtons.forEach(btn => {
         isBtnActive(btn);//disable other actions active when new one is being activated
         btn.classList.toggle('icon-active');
         currentAction = btn.classList.contains('icon-active') ? btn.id : options.nothing;//set the current action as the selected by the user
+
+        switch (currentAction) {
+            case options.draw: document.body.style.cursor = `url('./cursors/pincel.png'), auto`;
+                break;
+            case options.rectangle: document.body.style.cursor = `url('./cursors/point.png'), auto`;
+                break;
+            case options.erase: document.body.style.cursor = `url('./cursors/erase.png'), auto`;
+                break;
+            case options.ellipse: document.body.style.cursor = `url('./cursors/point.png'), auto`;
+                break;
+            default: document.body.style.cursor = '';
+                break;
+        }
+
         if (btn.id === 'picker') {
             drawingMethods.picker();
             currentAction = options.nothing;
@@ -83,11 +97,16 @@ if (!window.EyeDropper) {
     });
 }
 
-
-canvas.addEventListener("mouseup", () => pressed = false);
+canvas.addEventListener("mouseup", () => {
+    pressed = false
+});
 
 colorSelector.addEventListener("change", (e) => {
     drawingMethods.changeColor(e.target.value);
 }, false);
 
-trash?.addEventListener('click', () => drawingMethods.trash()); 
+trash.addEventListener('click', () => {
+    currentAction = options.nothing;
+    drawingMethods.trash();
+    setTimeout(() => trash.classList.remove('icon-active'), 100);
+});
